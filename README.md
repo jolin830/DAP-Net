@@ -24,6 +24,14 @@
 
 ---
 
+## Introduction
+Millimeter-wave (mmWave) radar provides privacy-preserving sensing and is valuable for human action recognition (HAR). Existing mmWave point cloud datasets are limited in scale and mostly collected under homogeneous single-source settings, preventing current methods from handling real-world distribution shifts caused by heterogeneous radar sources, such as different devices and frequency bands. To address this, we introduce UniMM-HAR, the largest and first mmWave point cloud HAR dataset for heterogeneous multi-source scenarios, standardizing three distinct radar configurations to realistically evaluate cross-source generalization. We further propose the Doppler-aware Point Cloud Network (DAP-Net) to tackle heterogeneity challenges. DAP-Net enhances intra-modal representations and performs cross-modal alignment to learn source-invariant action semantics. Leveraging action-consistent spatio-temporal Doppler patterns as anchors, the Dual-space Doppler Reparameterization (D2R) module performs sample-adaptive geometric densification and Doppler-guided feature recalibration, while the Text Alignment Module (TAM) provides stable semantic anchors via a pretrained textual space. Experiments show that DAP-Net significantly outperforms existing methods under heterogeneous radar settings, achieving state-of-the-art accuracy and strong cross-source robustness.
+
+## Framework
+<div align=center>
+<img src ="./figs/DAP.png" width="1600"/>
+</div>
+
 ## Dataset
 
 <div align=center>
@@ -49,7 +57,7 @@
 
 ---
 
-## Data Preparation
+### Data Preparation
 
 1. Download the original datasets:
    - [RadHAR](https://github.com/nesl/RadHAR)
@@ -79,7 +87,7 @@ python dataset/makenpz/makenpz_normal.py
 
 ---
 
-## Naming Convention
+### Naming Convention
 
 Example:
 `D001A001E001P001S0001`
@@ -94,7 +102,7 @@ If the original dataset does not provide certain fields, the corresponding part 
 
 ---
 
-## Dataset Directory Structure
+### Dataset Directory Structure
 
 ```bash
 UniMM-HAR/
@@ -126,7 +134,7 @@ UniMM-HAR/
 
 ---
 
-## Action Classes
+### Action Classes
 
 | ID | Action |
 |---:|---|
@@ -166,13 +174,44 @@ UniMM-HAR/
 
 ---
 
-## Code
+## Installation
 
 ```bash
-coming soon
+conda create -n dap python=3.9
+conda activate dap
+
+pip install -r requirements.txt
 ```
 
----
+## Directory Structure
+
+```text
+DAP-Net/
+├── dataset/           # Dataset preprocessing
+├── models/            # Network architectures
+├── utils/             # Utilities
+├── checkpoints/       # Saved checkpoints
+├── figs/              # Figures for README
+├── main.py            # Training / evaluation entry
+└── ours_sk_normal.py  # Dataset loader
+```
+
+## How to Run
+
+```bash
+python main.py
+```
+
+## Acknowledgement
+
+This project builds upon several publicly available mmWave human activity recognition datasets. We sincerely thank the authors and contributors of the following datasets and open-source resources:
+
+* [RadHAR](https://github.com/nesl/RadHAR?utm_source=chatgpt.com)
+* [mRI](https://github.com/SizheAn/mRI?utm_source=chatgpt.com)
+* [MM-Fi](https://github.com/ybhbingo/MMFi_dataset?utm_source=chatgpt.com)
+
+We gratefully acknowledge their efforts in collecting, maintaining, and publicly releasing these datasets, which made this research possible.
+
 
 
 
