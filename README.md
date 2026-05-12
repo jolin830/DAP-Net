@@ -39,21 +39,13 @@ Millimeter-wave (mmWave) radar provides privacy-preserving sensing and is valuab
 </div>
 
 
-### Download Links
 
-#### Cross-Subject
-- **Dataset (.npz)**: [Google Drive](https://drive.google.com/file/d/1hb0JYzbC3JAx1WfNL4-wKbZFAY0wkHNg/view?usp=sharing)
-- **Dataset (.csv)**: [Google Drive]()
-- **Normalized Dataset**: [Google Drive](https://drive.google.com/file/d/1ewkzmpGWuVdBjNymiEVS012_Pg7lcEp1/view?usp=sharing)
+### Dataset Access
 
-#### Cross-Set
-- **Dataset (.npz)**: [Google Drive](https://drive.google.com/file/d/1tvEprIFL938X6Ax3l9N7mTIx_s0aEl_9/view?usp=sharing)
-- **Dataset (.csv)**: [Google Drive]()
-- **Normalized Dataset**: [Google Drive]()
+The processed UniMM-HAR dataset is currently available upon request for academic research only. Researchers interested in obtaining the dataset should contact: **jylin25@stu.pku.edu.cn**.
 
-#### All
-- **Dataset (.npz)**: [Google Drive]()
-- **Dataset (.csv)**: [Google Drive]()
+Please include your full name, institution or organization, country, research purpose, and supervisor information (for students or postdoctoral researchers) in the email.
+
 
 ---
 
