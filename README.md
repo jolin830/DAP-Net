@@ -1,5 +1,4 @@
 
-
 <h1 align="center">DAP: Doppler-aware Point Network for Heterogeneous mmWave Action Recognition</h1>
 
 <p align="center">
@@ -44,7 +43,6 @@ Millimeter-wave (mmWave) radar provides privacy-preserving sensing and is valuab
 ### Dataset Access
 
 The processed UniMM-HAR dataset is currently available upon request for academic research only. Researchers interested in obtaining the dataset should contact: **jylin25@stu.pku.edu.cn**.
-
 Please include your full name, institution or organization, country, research purpose, and supervisor information (for students or postdoctoral researchers) in the email.
 
 
