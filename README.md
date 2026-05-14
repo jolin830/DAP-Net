@@ -216,6 +216,13 @@ python main.py
 
 ---
 
+## 🔮 Ongoing Development
+
+UniMM-HAR is an ongoing project.  
+We are continuously collecting and organizing more diverse mmWave point cloud data under additional devices, environments, subjects, and action categories to further support research on heterogeneous cross-source generalization and real-world deployment.
+
+---
+
 ## 🙏 Acknowledgement
 
 This project builds upon several publicly available mmWave human activity recognition datasets. We sincerely thank the authors and contributors of the following datasets and open-source resources:
