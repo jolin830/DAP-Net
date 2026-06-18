@@ -22,6 +22,7 @@
 </p>
 
 ---
+🎉 This work has been accepted to ECCV 2026.
 
 ## ✨ Introduction
 
