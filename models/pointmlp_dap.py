@@ -450,7 +450,6 @@ class Model(nn.Module):
         
         x, fastout, info = self.doppler_upsample(x)
 
-        # ljy revised  
         B, T, P ,C= x.size()
         x = x.reshape(B, T*P, C)  
         x = x[:,:,:self.inputC]
@@ -468,23 +467,6 @@ class Model(nn.Module):
 
         x = self.film(x, fast_cond)  # B,D,N
 
-        # FILM VER 2 但是没试过（G）
-        # fastout: [B, T, Pf, C]
-        # fast_pts = fastout[..., :self.inputC]  # [B, T, Pf, inputC]
-        # B, T, Pf, _ = fast_pts.shape
-        # # reshape for per-point encoding
-        # fast_pts_flat = fast_pts.view(B * T * Pf, self.inputC)
-        # fast_emb_flat = self.fast_point_encoder(fast_pts_flat)  # [B*T*Pf, D]
-        # fast_emb = fast_emb_flat.view(B, T, Pf, self.embed_dim)
-        # # per-frame pool:
-        # frame_cond = fast_emb.mean(dim=2)  # [B, T, D]
-        # # temporal pool:
-        # fast_cond = frame_cond.mean(dim=1)  # [B, D]
-        # fast_cond = self.fast_ln(fast_cond)
-        # # film:
-        # x = self.film(x, fast_cond)
-
-
         for i in range(self.stages):
             # Give xyz[b, p, 3] and fea[b, p, d], return new_xyz[b, g, 3] and new_fea[b, g, k, d]
             xyz, x = self.local_grouper_list[i](xyz, x.permute(0, 2, 1))  # [b,g,3]  [b,g,k,d]
@@ -493,7 +475,6 @@ class Model(nn.Module):
 
         x = F.adaptive_max_pool1d(x, 1).squeeze(dim=-1)
         x = self.classifier(x)
-        # x =  F.log_softmax(x, dim=1)    # ljy add，否则会出现输出爆炸
         return x
 
 
